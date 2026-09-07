@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Nikkah Ceremony - Mohammed Ahmed Khan & Sahana Khan</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Cinzel+Decorative:wght@700&family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=Great+Vibes&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <canvas id="ambientBubbleCanvas"></canvas>
+
+  <audio id="weddingAudio" loop preload="auto">
+    <source src="https://assets.mixkit.co/music/preview/mixkit-romantic-wedding-violin-and-piano-2350.mp3" type="audio/mp3">
+  </audio>
+
+  <div class="app-viewport">
+
+    <div id="envelope-overlay">
+      
+      <div class="surrounding-motifs">
+        <div class="motif-corner top-left-motif">✦ ﷽ ✦</div>
+        <div class="motif-corner top-right-motif">✦ ﷽ ✦</div>
+        <div class="motif-corner btm-left-motif">✦ Barakah ✦</div>
+        <div class="motif-corner btm-right-motif">✦ Mawaddah ✦</div>
+        <div class="glow-ring-orbit"></div>
+      </div>
+
+      <canvas id="burstCanvas"></canvas>
+
+      <div class="royal-envelope-box">
+        <div class="embossed-filigree top-pattern"></div>
+        <div class="embossed-filigree bottom-pattern"></div>
+        
+        <div class="envelope-fold side-fold-left"></div>
+        <div class="envelope-fold side-fold-right"></div>
+        <div class="envelope-fold bottom-flap"></div>
+        <div class="envelope-fold top-flap" id="envTopFlap"></div>
+
+        <div class="golden-energy-core" id="energyCore"></div>
+
+        <div class="royal-wax-seal" id="waxSealTrigger" title="Click to Open">
+          <div class="seal-inner-bevel">
+            <span class="seal-initials">A & S</span>
+          </div>
+          <div class="seal-aura"></div>
+        </div>
+      </div>
+
+      <div class="open-instruction">
+        <span class="sparkle-star">✧</span>
+        Tap the Royal Seal to Open
+        <span class="sparkle-star">✧</span>
+      </div>
+    </div>
+
+    <header class="royal-card hero-section glowing-section">
+      <div class="palace-arch-frame">
+        <div class="arch-filigree-top">❖</div>
+        <span class="royal-label">Welcome to the Nikkah Ceremony</span>
+        <h2 class="sub-ceremony-label">of</h2>
+        
+        <div class="royal-names-box">
+          <h1 class="groom-hero-name">Mohammed Ahmed Khan</h1>
+          <div class="golden-amper">&</div>
+          <h1 class="bride-hero-name">Sahana Khan</h1>
+        </div>
+
+        <div class="royal-gold-divider">
+          <span class="divider-line"></span>
+          <span class="divider-star">✦ ❖ ✦</span>
+          <span class="divider-line"></span>
+        </div>
+      </div>
+
+      <div class="scroll-prompt">
+        <span>Scroll down</span>
+        <div class="pulse-chevron">⌄</div>
+      </div>
+    </header>
+
+    <section class="royal-card date-scratch-section glowing-section">
+      <h2 class="section-script-title">The Date</h2>
+      <div class="section-subtitle">✦ Scratch to reveal the date ✦</div>
+
+      <div class="scratch-deck">
+        <div class="scratch-unit">
+          <div class="scratch-pad-frame">
+            <div class="hidden-date-val">10</div>
+            <canvas class="scratch-layer" id="scratchDay"></canvas>
+          </div>
+          <div class="pad-label">DAY</div>
+        </div>
+
+        <div class="scratch-unit">
+          <div class="scratch-pad-frame">
+            <div class="hidden-date-val val-month">January</div>
+            <canvas class="scratch-layer" id="scratchMonth"></canvas>
+          </div>
+          <div class="pad-label">MONTH</div>
+        </div>
+
+        <div class="scratch-unit">
+          <div class="scratch-pad-frame">
+            <div class="hidden-date-val">2027</div>
+            <canvas class="scratch-layer" id="scratchYear"></canvas>
+          </div>
+          <div class="pad-label">YEAR</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="royal-card invitation-formal-card glowing-section">
+      <div class="inner-arch-border">
+        <div class="bismillah-calligraphy">بِسْمِ ٱللَّٰهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ</div>
+        
+        <p class="royal-invitation-subtext">YOU ARE CORDIALLY INVITED TO CELEBRATE THE NIKKAH CEREMONY OF</p>
+
+        <div class="named-couple-block">
+          <h2 class="couple-title-primary">Mohammed Ahmed Khan</h2>
+          <p class="lineage-info">SON OF MR. & MRS. CH. HUSSAINI</p>
+
+          <div class="calligraphy-with">With</div>
+
+          <h2 class="couple-title-primary">Sahana Khan</h2>
+          <p class="lineage-info">DAUGHTER OF MR. & MRS. CH. FAROOQI</p>
+        </div>
+
+        <div class="holy-ayah-frame">
+          <div class="ayah-arabic">وَخَلَقْنَاكُمْ أَزْوَاجًا</div>
+          <div class="ayah-translation">"And We created you in pairs."</div>
+          <div class="ayah-surah">(Surah An-Naba 78:8)</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="royal-card timeline-card glowing-section">
+      <h2 class="section-script-title">Wedding Timeline</h2>
+      <div class="royal-gold-divider">
+        <span class="divider-line"></span>
+        <span class="divider-star">✦</span>
+        <span class="divider-line"></span>
+      </div>
+
+      <div class="palace-timeline">
+        <div class="central-glow-spine"></div>
+
+        <div class="timeline-step step-right">
+          <div class="timeline-lantern-node">✦</div>
+          <div class="step-card">
+            <span class="milestone-time">6:00 pm</span>
+            <p class="milestone-name">Guest Arrival and<br>Welcome Drinks</p>
+          </div>
+        </div>
+
+        <div class="timeline-step step-left">
+          <div class="timeline-lantern-node">✦</div>
+          <div class="step-card">
+            <span class="milestone-time">6:30 pm</span>
+            <p class="milestone-name">Bride Entrance</p>
+          </div>
+        </div>
+
+        <div class="timeline-step step-right">
+          <div class="timeline-lantern-node">✦</div>
+          <div class="step-card">
+            <span class="milestone-time">8:30 pm</span>
+            <p class="milestone-name">Royal Buffet Opening</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="royal-card countdown-card glowing-section">
+      <h2 class="section-script-title">The Celebration Begins</h2>
+      <div class="royal-gold-divider">
+        <span class="divider-line"></span>
+        <span class="divider-star">✦</span>
+        <span class="divider-line"></span>
+      </div>
+
+      <div class="royal-counter-cluster" id="countdownContainer">
+        <div class="clock-unit">
+          <div class="clock-digit" id="daysVal">00</div>
+          <div class="clock-tag">Days</div>
+        </div>
+        <div class="clock-separator">:</div>
+        <div class="clock-unit">
+          <div class="clock-digit" id="hoursVal">00</div>
+          <div class="clock-tag">Hours</div>
+        </div>
+        <div class="clock-separator">:</div>
+        <div class="clock-unit">
+          <div class="clock-digit" id="minsVal">00</div>
+          <div class="clock-tag">Minutes</div>
+        </div>
+        <div class="clock-separator">:</div>
+        <div class="clock-unit">
+          <div class="clock-digit" id="secsVal">00</div>
+          <div class="clock-tag">Seconds</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="royal-card venue-card glowing-section">
+      <h2 class="section-script-title">Location</h2>
+      <div class="venue-city-title">DUBAI</div>
+      <p class="venue-address">Four Seasons Hotel in Jumeirah,<br>Dana Ballroom</p>
+
+      <div class="venue-photo-holder">
+        <img src="https://images.unsplash.com/photo-1582719508461-905c673771fd?auto=format&fit=crop&w=800&q=80" alt="Dana Ballroom Dubai" />
+        <div class="photo-glow-border"></div>
+      </div>
+
+      <div class="map-embed-wrapper">
+        <iframe 
+          title="Dana Ballroom Dubai Map"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3610.1786510368155!2d55.2396344!3d25.1972018!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f43501cb6b033%3A0xe54d6f030eb99c3!2sFour%20Seasons%20Resort%20Dubai%20at%20Jumeirah%20Beach!5e0!3m2!1sen!2sae!4v1700000000000!5m2!1sen!2sae" 
+          width="100%" 
+          height="190" 
+          style="border:0;" 
+          allowfullscreen="" 
+          loading="lazy">
+        </iframe>
+        <div class="map-overlay-badge">
+          <a href="https://maps.google.com/?q=Four+Seasons+Resort+Dubai+at+Jumeirah+Beach" target="_blank" rel="noopener" class="map-gold-btn">
+            <span>Open in Maps</span>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="royal-card dresscode-card glowing-section">
+      <h2 class="section-script-title">Dress Code</h2>
+      <div class="royal-gold-divider">
+        <span class="divider-line"></span>
+        <span class="divider-star">✦</span>
+        <span class="divider-line"></span>
+      </div>
+
+      <p class="dresscode-guideline">
+        We kindly invite our beloved guests to dress in<br>
+        <strong>Traditional Pakistani Attire</strong><br>
+        in soft pastel shades.
+      </p>
+
+      <div class="palette-caption">Recommended shades</div>
+      <div class="color-palette-tray">
+        <div class="color-orb" style="background: #D3C6E5;" title="Lilac"></div>
+        <div class="color-orb" style="background: #F8D3C5;" title="Peach"></div>
+        <div class="color-orb" style="background: #F8EDB9;" title="Buttercream"></div>
+        <div class="color-orb" style="background: #E8C1C1;" title="Dusty Rose"></div>
+        <div class="color-orb" style="background: #BFCEC2;" title="Sage Green"></div>
+      </div>
+
+      <div class="royal-caution-box">
+        <p>Please avoid wearing beige, as it has been reserved for the bride and groom.</p>
+        <div class="micro-divider"></div>
+        <p>Sage green is reserved exclusively for the bridesmaids.</p>
+      </div>
+
+      <div class="gift-etiquette-box">
+        <h4 class="etiquette-heading">Gift Preferences</h4>
+        <p>While we adore your little ones, we have chosen to make this an adults-only celebration. We appreciate your understanding.</p>
+      </div>
+    </section>
+
+    <section class="royal-card rsvp-card glowing-section">
+      <h2 class="section-script-title">Confirm Your Attendance</h2>
+      <div class="royal-gold-divider">
+        <span class="divider-line"></span>
+        <span class="divider-star">✦</span>
+        <span class="divider-line"></span>
+      </div>
+
+      <p class="rsvp-cutoff-note">
+        To help us prepare for a joyful celebration,<br>
+        kindly confirm your attendance by<br>
+        <strong>30 November 2026</strong>
+      </p>
+
+      <a href="https://api.whatsapp.com/send?text=I%20confirm%20my%20attendance%20for%20Mohammed%20Ahmed%20Khan%20and%20Sahana%20Khan's%20Nikkah%20Ceremony!" target="_blank" rel="noopener" class="royal-rsvp-button">
+        <span class="btn-shimmer"></span>
+        RSVP
+      </a>
+    </section>
+
+    <footer class="royal-footer">
+      <div class="footer-blessing">Hope to see you there</div>
+      <div class="studio-signature-block">
+        <span class="signature-tagline">Designed with love</span>
+        <a href="#" class="agency-credit">webventurestudio</a>
+      </div>
+    </footer>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+          </html>
+
